@@ -8,6 +8,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 class FlywayDatabaseApplicationTests {
 
@@ -37,6 +39,12 @@ class FlywayDatabaseApplicationTests {
 		userID = results.getUserID();
 
 		Assertions.assertEquals(data.username(), results.getUsername());
+	}
+
+	@Test
+	public void findAllNotNull() {
+		List<UsersDao> result = usersRepository.findAll();
+		Assertions.assertNotNull(result);
 	}
 
 	@AfterEach
