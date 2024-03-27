@@ -1,12 +1,16 @@
 package com.tpk.FlywayDatabase.dao;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@RequiredArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class UsersDao {
         @Id
